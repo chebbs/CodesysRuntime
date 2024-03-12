@@ -1,0 +1,21 @@
+PROGRAM MainProgram
+VAR_INPUT
+   StartButton: BOOL;  (* The button on the HMI to start the process *)
+END_VAR
+
+VAR_OUTPUT
+   OutputControl: BOOL;  (* Output controlled by the switch *)
+END_VAR
+
+VAR
+   SwitchState: BOOL;  (* Switch state variable *)
+END_VAR
+
+(* Main logic *)
+IF StartButton THEN
+   SwitchState := NOT SwitchState;  (* Toggle the switch state *)
+END_IF
+
+OutputControl := SwitchState;  (* Output controlled by the switch *)
+
+END_PROGRAM
